@@ -1,0 +1,130 @@
+header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+    user-select: none;
+    backdrop-filter: blur(30px);
+    border-bottom: 1px solid #ffffff14;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Left, center, right */
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Logo */
+.nav-logo {
+    width: 40px;
+    transition: opacity .2s ease-in-out;
+}
+.nav-logo:hover {
+    opacity: .7;
+}
+
+/* Links */
+.nav-link {
+    font-family: 'googleSans';
+    font-size: 1rem;
+    color: #8a8f98;
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(0);
+    transition: transform .25s ease, color .25s ease;
+}
+.nav-link:hover {
+    color: white;
+    transform: translateY(-1.2px);
+}
+
+.nav-link-register {
+    font-family: 'googleSans';
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: .7rem;
+    transition: opacity .2s ease-in-out;
+}
+.nav-link-register:hover {
+    opacity: .7;
+}
+
+/* Hamburger */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 101;
+}
+.nav-hamburger .line {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+.nav-hamburger .top {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-hamburger .middle {
+    opacity: 0;
+}
+.nav-hamburger .bottom {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    nav {
+        width: 70%;
+    }
+}
+
+/* Mobile / 768px */
+@media (max-width: 768px) {
+    nav {
+        width: 90%;
+    }
+
+    /* Cacher les menus par défaut */
+    .nav-center, .nav-right {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.85);
+        padding: 1rem 0;
+        align-items: center;
+        gap: 1rem;
+        display: none;
+    }
+
+    /* Afficher quand hamburger ouvert */
+    .nav-center.open, .nav-right.open {
+        display: flex;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+}

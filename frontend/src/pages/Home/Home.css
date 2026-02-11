@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'googleSans';
+    src: url('../../assets/fonts/GoogleSans/GoogleSans_17pt-Regular.ttf');
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 1rem;
+    /* pour un petit padding sur mobile */
+}
+
+main>section {
+    width: 50%;
+    max-width: 1200px;
+}
+
+.color-bends-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: transparent;
+    color: white;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.home-content h1 {
+    font-family: 'googleSans';
+    font-size: 4rem;
+    background-color: transparent;
+    line-height: 1.2;
+    max-width: 90%;
+}
+
+.home-content p {
+    width: 60%;
+    max-width: 600px;
+    color: #b6b9c0;
+    font-family: 'googleSans';
+    font-size: 1.1rem;
+    background-color: transparent;
+}
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: transparent;
+}
+
+.cta-primary {
+    background-color: white;
+    color: black;
+    border: none;
+    text-decoration: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 1rem;
+    font-family: 'googleSans';
+    transition: opacity .2s ease-in-out;
+    flex-shrink: 0;
+}
+
+.cta-primary:hover {
+    opacity: .7;
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.07);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    text-decoration: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 1rem;
+    font-family: 'googleSans';
+    transition: border .2s ease-in-out;
+    flex-shrink: 0;
+}
+
+.cta-secondary:hover {
+    border: 1px solid rgba(255, 255, 255, 0.192);
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media (max-width: 1024px) {
+    main>section {
+        width: 70%;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    main > section {
+        width: 90%;
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .home-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .cta-primary, .cta-secondary {
+        padding: 0.6rem 2rem;
+        font-size: 0.9rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 0.9rem;
+    }
+}
