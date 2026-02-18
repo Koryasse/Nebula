@@ -1,62 +1,49 @@
 import { Link } from 'react-router-dom'
-import LightRays from '../../components/LightRays/LightRays'
-import Logo from '../../assets/nebulaLogo/nebulaWhite.svg'
-import imgLeft from '../../assets/img/register-left-image.svg'
+import Logo from '../../assets/nebulaLogo/nebulaBlack.svg'
 import './Register.css'
 
 function Register() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await fetch("http://localhost:8000/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        username,
+        password
+      })
+    })
+  }
+
   return (
-    <>
-      <main className='register-main'>
-        <section className='left-image'>
-          <img src={imgLeft} alt="image left" />
-        </section>
-        
-        <section className='register-content'>
-          {/* Logo */}
-          <div className='register-logo'>
-            <img src={Logo} alt="Logo" />
+    <main className='register-main'>
+      <section className='register-main-content'>
+        <div>
+          <div>
+            <img src={Logo} alt="" />
+            <h2>Welcome to Nebula</h2>
+            <p>Create an account and take control of your tasks.</p>
           </div>
-
-          {/* Form container */}
-          <div className='register-form'>
-            <div>
-              <div>
-                <h1>Inscrivez-vous</h1>
-              </div>
-
-              {/* Form */}
-              <form action="post">
-                <div>
-                  <div>
-                    <label htmlFor="email">E-mail</label>
-                    <input type="email" id='email' name='email' />
-                  </div>
-                  <div>
-                    <label htmlFor="username">Nom d'utilisateur</label>
-                    <input type="text" id='username' name='username' />
-                  </div>
-                  <div>
-                    <label htmlFor="password">Mot de passe</label>
-                    <input type="password" id='password' name='password' />
-                  </div>
-                  <div>
-                    <label htmlFor="passwordConfirm">Confirmer le mot de passe</label>
-                    <input type="password" id='passwordConfirm' name='passwordConfirm' />
-                  </div>
-                  <button type='submit' name='submit'>S'inscrire</button>
-                </div>
-              </form>
-              <div>
-                <Link className='register-login-link' to="/login">Vous avez déjà un compte ?</Link>
-              </div>
-            </div>
+          <form action="">
+            <input type="email" placeholder='Enter email address' />
+            <input type="text" placeholder="Enter username" />
+            <input type="password" placeholder='Enter password' />
+            <input type="password" placeholder='Confirm password' />
+            <button>Continue</button>
+          </form>
+          <div>
+            <p>By continuing, you agree to our 
+              <Link to="/terms"> Terms </Link>
+              and <Link to="/privacy">Privacy policy</Link>.
+            </p>
+            <p>Already have an account? <Link to="/login">Sign in</Link></p>
           </div>
-        </section>
-
-        <section></section>
-      </main>
-    </>
+        </div>
+      </section>
+      <section className='register-bg'></section>
+    </main>
   )
 }
 

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'googleSans';
+    src: url('../../assets/fonts/GoogleSans/GoogleSans_17pt-Regular.ttf');
+}
+
+.contact-main {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'googleSans';
+}
+
+.contact-main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    background-color: #08090a;
+    color: white;
+}
+
+.contact-main-content fieldset {
+    border: 1px solid #ffffff0d;
+    border-radius: 8px;
+}
+
+.contact-fieldset-header {
+    padding: 24px;
+    border-bottom: 1px solid #ffffff0d;
+}
+
+.contact-fieldset-main>form {
+    display: flex;
+    flex-direction: column;  
+    padding: 24px; 
+}
+
+.contact-fieldset-main>form>label {
+    font-size: .9rem;
+    color: #8a8f98;
+    margin-bottom: 24px;
+}
+
+.contact-fieldset-main>form>textarea {
+    font-family: 'googleSans';
+    background-color: #ffffff0d;
+    caret-color: #5e6ad2;
+    appearance: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 24px;
+    scroll-padding-block: 8px;
+}
+
+.contact-fieldset-footer {
+    padding: 24px;
+    border-top: 1px solid #ffffff0d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-fieldset-footer span {
+    font-size: .9rem;
+    color: #8a8f98;
+}
+
+.contact-fieldset-footer span>a {
+    color: #8a8f98;
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+}
+
+.contact-fieldset-footer span>a:hover {
+    color: white;
+}
+
+.contact-fieldset-footer button {
+    border: 1px solid #ffffff0d;
+    border-radius: 5px;
+    background-color: #28282c;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.contact-fieldset-footer button:hover {
+    background-color: #38383b;
+}

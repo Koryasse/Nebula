@@ -1,55 +1,47 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import imgRight from '../../assets/img/register-right-image.svg'
-import Logo from '../../assets/nebulaLogo/nebulaWhite.svg'
+import Logo from '../../assets/nebulaLogo/nebulaBlack.svg'
 import './Login.css'
 
 function Login() {
+  const handleLogin = async (e) => {
+    e.preventDefault()
+
+    await fetch("http://localhost:8000/login", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    })
+  }
 
   return (
-    <>
-      <main>
-        <section></section>
-
-        <section className='login-content'>
-          {/* Logo */}
-          <div className='login-logo'>
-            <img src={Logo} alt="Logo" />
+    <main className='login-main'>
+      <section className='login-main-content'>
+        <div>
+          <div>
+            <img src={Logo} alt="" />
+            <h2>Welcome back</h2>
           </div>
-
-          {/* Form container */}
-          <div className='login-form'>
-            <div>
-              <div>
-                <h1>Connectez-vous</h1>
-              </div>
-
-              {/* Form */}
-              <form action="post">
-                <div>
-                  <div>
-                    <label htmlFor="email">E-mail</label>
-                    <input type="email" id='email' name='email' />
-                  </div>
-                  <div>
-                    <label htmlFor="password">Mot de passe</label>
-                    <input type="password" id='password' name='password' />
-                  </div>
-                  <button type='submit' name='submit'>Se connecter</button>
-                </div>
-              </form>
-              <div>
-                <Link className='login-register-link' to="/login">Pas de ssssssssssssssssssssssssssssssssscompte ?</Link>
-              </div>
-            </div>
+          <form action="">
+            <input type="email" placeholder="Enter email or username" />
+            <input type="password" placeholder='Password' />
+            <button>Continue</button>
+          </form>
+          <div>
+            <p>By continuing, you agree to our 
+              <Link to="/terms"> Terms </Link>
+              and <Link to="/privacy">Privacy policy</Link>.
+            </p>
+            <p>Don't have an account? <Link to="/register">Sign up</Link></p>
           </div>
-        </section>
-
-        <section className='right-image'>
-          <img src={imgRight} alt="image right" />
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+      <section className='login-bg'></section>
+    </main>
   )
 }
 

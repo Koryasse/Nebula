@@ -3,7 +3,8 @@
     src: url('../../assets/fonts/GoogleSans/GoogleSans_17pt-Regular.ttf');
 }
 
-main {
+.home-main {
+    background-color: #08090a;
     position: relative;
     height: 100vh;
     width: 100%;
@@ -12,10 +13,9 @@ main {
     align-items: center;
     overflow: hidden;
     padding: 0 1rem;
-    /* pour un petit padding sur mobile */
 }
 
-main>section {
+.home-main>section {
     width: 50%;
     max-width: 1200px;
 }
@@ -101,7 +101,7 @@ main>section {
 /* --- MEDIA QUERIES --- */
 
 @media (max-width: 1024px) {
-    main>section {
+    .home-main>section {
         width: 70%;
     }
 
@@ -116,7 +116,7 @@ main>section {
 }
 
 @media (max-width: 768px) {
-    main > section {
+    .home-main > section {
         width: 90%;
     }
 

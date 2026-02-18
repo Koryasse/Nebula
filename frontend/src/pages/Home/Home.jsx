@@ -26,7 +26,7 @@ export default function Home() {
           <p>Meet the platform for modern work. Streamline tasks,
              projects, and team workflows effortlessly.</p>
           <div className="home-buttons">
-            <Link className='cta-primary' to="/">Get Started</Link>
+            <Link className='cta-primary' to="/register">Get Started</Link>
             <Link className='cta-secondary' to="/about">Learn More</Link>
           </div>
         </div>

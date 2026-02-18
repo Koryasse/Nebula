@@ -2,10 +2,5 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #08090a;
-}
-
-::selection {
-    background-color: white;
-    color: #08090a;
+    user-select: none;
 }
